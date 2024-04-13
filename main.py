@@ -10,6 +10,12 @@ class CalculadoraMCD:
             a, b = b, a % b
         return a
 
+    def calcular_mcm(self):
+        """Calcula el mínimo común múltiplo (MCM) de dos números."""
+        mcd = self.calcular_mcd()
+        mcm = (self.num1 * self.num2) // mcd
+        return mcm
+
 # Solicitar entrada de usuario
 num1 = int(input("Ingresa el primer número: "))
 num2 = int(input("Ingresa el segundo número: "))
@@ -18,7 +24,11 @@ num2 = int(input("Ingresa el segundo número: "))
 calculadora = CalculadoraMCD(num1, num2)
 
 # Calcular el MCD
-resultado = calculadora.calcular_mcd()
+resultado_mcd = calculadora.calcular_mcd()
 
-# Mostrar resultado utilizando f-strings
-print(f"El máximo común divisor de {num1} y {num2} es: {resultado}")
+# Calcular el MCM
+resultado_mcm = calculadora.calcular_mcm()
+
+# Mostrar resultados utilizando f-strings
+print(f"El máximo común divisor de {num1} y {num2} es: {resultado_mcd}")
+print(f"El mínimo común múltiplo de {num1} y {num2} es: {resultado_mcm}")
